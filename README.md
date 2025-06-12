@@ -74,11 +74,12 @@ You can test:
 🔹 Chunk size impact
 
 🔹 Reranking effectiveness
-
+---
 ## 📦 Output
 output/combined_response.docx – Final LLM responses grouped by index
 ---
 Logs and errors handled in logs/ (To be done)
+---
 
 ## 🧩 Dependencies
         LangChain
@@ -94,5 +95,7 @@ Logs and errors handled in logs/ (To be done)
         python-docx
 ---
 ## 🙌 Contributing
-Pull requests welcome. For major changes, please open an issue first.
+
+    Pull requests welcome. For major changes, please open an issue first.
+
 ---
