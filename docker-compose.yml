@@ -1,0 +1,72 @@
+name: rag_project
+services:
+  etcd:
+    image: quay.io/coreos/etcd:v3.5.5
+    container_name: milvus-etcd
+    command:
+      - etcd
+      - -advertise-client-urls=http://127.0.0.1:2379
+      - -listen-client-urls
+      - http://0.0.0.0:2379
+      - --data-dir
+      - /etcd
+    environment:
+      ETCD_AUTO_COMPACTION_MODE: revision
+      ETCD_AUTO_COMPACTION_RETENTION: "1000"
+      ETCD_QUOTA_BACKEND_BYTES: "4294967296"
+    volumes:
+      - type: bind
+        source: /host_mnt/c/Rag_Project/volumes/etcd
+        target: /etcd
+        bind:
+          create_host_path: true
+
+  minio:
+    image: minio/minio:RELEASE.2020-12-03T00-03-10Z
+    container_name: milvus-minio
+    command:
+      - minio
+      - server
+      - /minio_data
+    environment:
+      MINIO_ACCESS_KEY: minioadmin
+      MINIO_SECRET_KEY: minioadmin
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    volumes:
+      - type: bind
+        source: /host_mnt/c/Rag_Project/volumes/minio
+        target: /minio_data
+        bind:
+          create_host_path: true
+
+  standalone:
+    image: milvusdb/milvus:v2.5.10
+    container_name: milvus-standalone
+    command:
+      - milvus
+      - run
+      - standalone
+    depends_on:
+      etcd:
+        condition: service_started
+      minio:
+        condition: service_started
+    environment:
+      ETCD_ENDPOINTS: etcd:2379
+      MINIO_ADDRESS: minio:9000
+    ports:
+      - "19530:19530"
+    volumes:
+      - type: bind
+        source: /host_mnt/c/Rag_Project/volumes/milvus
+        target: /var/lib/milvus
+        bind:
+          create_host_path: true
+
+networks:
+  default:
+    name: milvus
