@@ -47,20 +47,20 @@ python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
 
-
+---
 ## 🛠️ Setup Milvus (Standalone)
 
 docker-compose up -d  # Make sure milvus.yaml is present
-
+---
 ## Run the App
-
+---
 # Backend API
 uvicorn app.api.main:app --reload (To be done)
-
+---
 # Frontend (Optional)
 streamlit run app/frontend/app.py
 
-
+---
 📊 Benchmarking
 You can test:
 
@@ -72,7 +72,7 @@ You can test:
 
 📦 Output
 output/combined_response.docx – Final LLM responses grouped by index
-
+---
 Logs and errors handled in logs/ (To be done)
 
 🧩 Dependencies
@@ -87,6 +87,7 @@ Logs and errors handled in logs/ (To be done)
         OpenAI / Gemini (optional)
 
         python-docx
-
+---
 🙌 Contributing
 Pull requests welcome. For major changes, please open an issue first.
+---
