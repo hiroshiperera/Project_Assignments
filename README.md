@@ -52,7 +52,7 @@ pip install -r requirements.txt
 ```
 docker-compose up -d  # Make sure milvus.yaml is present
 ```
----
+
 
 ---
 ## Backend API
@@ -74,11 +74,14 @@ You can test:
 🔹 Chunk size impact
 
 🔹 Reranking effectiveness
+
 ---
 ## 📦 Output
 output/combined_response.docx – Final LLM responses grouped by index
+
 ---
 Logs and errors handled in logs/ (To be done)
+
 ---
 
 ## 🧩 Dependencies
@@ -93,6 +96,7 @@ Logs and errors handled in logs/ (To be done)
         OpenAI / Gemini (optional)
 
         python-docx
+        
 ---
 ## 🙌 Contributing
 
