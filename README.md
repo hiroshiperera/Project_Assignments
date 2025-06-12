@@ -54,18 +54,18 @@ docker-compose up -d  # Make sure milvus.yaml is present
 ---
 
 ---
-# Backend API
+## Backend API
 ```
 uvicorn app.api.main:app --reload (To be done)
 ```
 ---
-# Frontend (Optional)
+## Frontend (Optional)
 ```
 streamlit run app/frontend/app.py # not yet executed
 
 ```
 ---
-📊 Benchmarking
+## 📊 Benchmarking
 You can test:
 
 🔹 Speed vs Accuracy per index (IVF vs HNSW vs FLAT)
@@ -74,12 +74,12 @@ You can test:
 
 🔹 Reranking effectiveness
 
-📦 Output
+## 📦 Output
 output/combined_response.docx – Final LLM responses grouped by index
 ---
 Logs and errors handled in logs/ (To be done)
 
-🧩 Dependencies
+## 🧩 Dependencies
         LangChain
 
         Milvus / pymilvus
@@ -92,6 +92,6 @@ Logs and errors handled in logs/ (To be done)
 
         python-docx
 ---
-🙌 Contributing
+## 🙌 Contributing
 Pull requests welcome. For major changes, please open an issue first.
 ---
