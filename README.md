@@ -52,14 +52,18 @@ pip install -r requirements.txt
 
 docker-compose up -d  # Make sure milvus.yaml is present
 ---
-## Run the App
+
 ---
 # Backend API
+```
 uvicorn app.api.main:app --reload (To be done)
+```
 ---
 # Frontend (Optional)
-streamlit run app/frontend/app.py
+```
+streamlit run app/frontend/app.py # not yet executed
 
+```
 ---
 📊 Benchmarking
 You can test:
