@@ -50,7 +50,7 @@ pip install -r requirements.txt
 ---
 ## 🛠️ Setup Milvus (Standalone)
 ```
-docker-compose up -d  # Make sure milvus.yaml is present
+docker-compose up -d  # Make sure docker-compose.yml is present
 ```
 
 
