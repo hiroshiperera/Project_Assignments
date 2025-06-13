@@ -41,7 +41,7 @@ app/
 ## 📥 Installation
 
 ```bash
-git clone https://github.com/yourname/rag-pdf-analyzer.git
+git clone https://github.com/hiroshiperera/rag-pdf-analyzer.git
 cd rag-pdf-analyzer
 python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
