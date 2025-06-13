@@ -23,18 +23,18 @@ This project extracts content from large PDFs (text, images, and tables), perfor
 ---
 
 ## ⚙️ Project Structure
-
+```
 app/
 │
-├── api/ # FastAPI endpoints (To be done)
-├── core/ # Core logic: chunking, embedding, indexing
-├── frontend/ # Streamlit UI (To be done)
-├── scripts/ # CLI or batch processors
-├── services/ # RAG pipeline services
-├── resources/ # PDFs and sample inputs
-├── tests/ # Test cases
-└── main.py # Entry point
-
+├── api/        # FastAPI endpoints (To be done)
+├── core/       # Core logic: chunking, embedding, indexing
+├── frontend/   # Streamlit UI (To be done)
+├── scripts/    # CLI or batch processors, including main.py
+│   └── main.py # Application entry point
+├── services/   # RAG pipeline services
+├── resources/  # PDFs and sample inputs
+├── tests/      # Test cases (to be done)
+```
 
 ---
 
